@@ -1,0 +1,38 @@
+{
+    "attributes": {
+        "ui-view": {
+            "context": "div"
+        },
+        "layout": {
+            "context": "div"
+        }
+    },
+    "elements": {
+        "md-icon": {
+            "attributes": {
+                "class": {},
+                "md-svg-icon": {}
+            }
+        },
+        "md-content": {
+            "attributes": {
+                "id": {},
+                "flex": {}
+            }
+        },
+        "md-list": {},
+        "md-sidenav": {
+            "attributes": {
+                "md-is-locked-open": {},
+                "class": {},
+                "md-component-id": {}
+            }
+        },
+        "md-toolbar": {
+            "attributes": {
+                "ng-click": {},
+                "class": {}
+            }
+        }
+    }
+}
