@@ -1,3 +1,18 @@
-<md-content flex id="content">
-    Event view
+<md-content flex id="content" layout="column" layout-fill>
+    <md-button class="md-fab actionBtn" aria-label="Eat cake" ng-click="showAdd()">
+        +
+    </md-button>
+    <md-list>
+        <md-list-item class="md-3-line" ng-repeat="item in events">
+            <img ng-src="{{item.face}}" alt="{{item.who}}" class="md-avatar">
+            <div class="md-list-item-text">
+                <h3>{{item.name}}</h3>
+                <h4>{{item.when}}</h4>
+                <p>
+                    {{item.what}}
+                </p>
+            </div>
+            <md-divider inset></md-divider>
+        </md-list-item>
+    </md-list>
 </md-content>
