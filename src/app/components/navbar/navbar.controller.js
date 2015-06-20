@@ -1,7 +1,15 @@
 'use strict';
 
 angular.module('bhendi')
-        .controller('NavbarCtrl', function ($scope, $mdSidenav, $state, $mdBottomSheet, $q, $log) {
+        .controller('NavbarCtrl', function ($scope, $mdSidenav, $state, $mdBottomSheet, $q, $log, $mdToast) {
+            $scope.notify = function (msg) {
+                var toast = $mdToast.simple()
+                        .content(msg)
+                        .action('OK')
+                        .highlightAction(false)
+                        .position('bottom left');
+                $mdToast.show(toast);
+            };
             $scope.date = new Date();
             /**
              * First hide the bottomsheet IF visible, then
@@ -14,7 +22,7 @@ angular.module('bhendi')
                     $mdSidenav('left').toggle();
                 });
             };
-            
+
             $scope.menu =
                     [
                         {
