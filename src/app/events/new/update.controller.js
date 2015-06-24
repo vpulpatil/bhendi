@@ -2,6 +2,11 @@
 
 angular.module('bhendi')
         .controller('UpdateEventCtrl', function ($scope, $mdDialog) {
+
+            
+
+
+        
             $scope.types = [{
                     id: 1,
                     name: 'Workshop'
