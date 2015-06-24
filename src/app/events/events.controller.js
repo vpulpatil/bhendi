@@ -4,8 +4,13 @@ angular.module('bhendi')
         .controller('EventCtrl', function ($scope, $mdDialog, $log, $mdToast) {
             $scope.events = [];
 
+            
+
             $scope.showAdd = function (ev) {
+
+
                 $mdDialog.show({
+                   
                     controller: 'UpdateEventCtrl',
                     templateUrl: 'app/events/new/newEvent.html',
                     targetEvent: ev
@@ -17,6 +22,12 @@ angular.module('bhendi')
                     $log.info('You cancelled the dialog.');
                 });
             };
+            
+            $scope.deleteEvent=function(item){
+                $scope.events.splice(item,1);
+                $scope.notify('Event Deleted');
+            };
+
 
 
         })
