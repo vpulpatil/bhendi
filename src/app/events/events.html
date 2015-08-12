@@ -7,12 +7,12 @@
             <img ng-src="{{item.face}}" alt="{{item.who}}" class="md-avatar">
             <div class="md-list-item-text">
                 <h3>{{item.name}}</h3>
-                <h4>{{item.when | date: "dd-MM-yyyy HH:mm a"}}</h4>
+                  <h4>{{item.whend | date: "dd-MM-yyyy"}} {{item.whent | date:"HH:mm a"}}</h4>
                 <p>
                     {{item.what}}
-                </p> 
+                </p>
             <md-button  class="md-fab bottom-left" aria-label="delete event" ng-click="deleteEvent(events.indexOf(item))" >
-            <md-icon md-svg-icon="assets/svg/empty21.svg"> </md-icon> 
+            <md-icon md-svg-icon="assets/svg/empty21.svg"> </md-icon>
             </md-button>
             </div>
             &nbsp;
