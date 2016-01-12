@@ -33,15 +33,15 @@ angular.module('bhendi')
         })
         .config(function ($stateProvider) {
             $stateProvider
-                    .state('home.events', {
-                        url: '/event',
+                    .state('home.eventsWorkshops', {
+                        url: '/workshops',
                         views: {
                             '': {
                                 templateUrl: 'app/events/events.html',
                                 controller: 'EventCtrl'
                             },
                             'heading': {
-                                template: 'Events'
+                                template: 'Workshops'
                             }
                         },
                     });
