@@ -14,7 +14,7 @@ angular.module('bhendi')
                                 controller: 'ExamSectionCtrl'
                             },
                             'heading': {
-                                template: 'Exam Section'
+                                template: 'Examination Section '
                             }
                         },
                     });
