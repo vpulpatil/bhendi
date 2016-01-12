@@ -1,3 +1,14 @@
+<style type="text/css">
+      a{
+        text-decoration: none;
+        color: black;
+      }
+
+      .spacing{
+        padding-left: 10%;
+      }
+</style>
+
 <div layout="row">
     <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
                 md-component-id="left"
@@ -7,16 +18,106 @@
             <h1>Bhendi</h1>
         </md-toolbar>
 
-        <md-list>
-            <md-list-item ng-repeat="item in menu">
-                <md-button ng-click="goto(item)" ng-class="{
+        <!-- Comment: Drop down for Events -->
+        <div ng-init="showEvents=false">
+            <div>
+              <label>
+                <a href="" ng-show="!showEvents" ng-click="showEvents=!showEvents">+</a>
+                <a href="" ng-show="showEvents" ng-click="showEvents=!showEvents">-</a>
+                <md-button ng-click="showEvents=!showEvents">Events</md-button>
+              </label>
+            </div>
+            <div ng-show="showEvents">
+                <md-list>
+                    <md-list-item ng-repeat="item in Events_subMenu">
+
+                        <md-button class="spacing" ng-click="goto(item)" ng-class="{
                             'selected' : item === selected }">
-                    {{item.title}}
-                </md-button>
-            </md-list-item>
-        </md-list>
+                        
+
+                           {{item.title}}
+                        </md-button>
+                    </md-list-item>
+                </md-list>
+            </div>
+        </div>
+
+
+
+        <!-- Drop down for Time Table -->
+        <div ng-init="showTimeTable=false">
+            <div>
+              <label>
+                <a href="" ng-show="!showTimeTable" ng-click="showTimeTable=!showTimeTable">+</a>
+                <a href="" ng-show="showTimeTable" ng-click="showTimeTable=!showTimeTable">-</a>
+                <md-button ng-click="showTimeTable=!showTimeTable">Time Table</md-button>
+              </label>
+            </div>
+            <div ng-show="showTimeTable">
+                <md-list>
+                    <md-list-item ng-repeat="item in TT_subMenu">
+                        <md-button class="spacing" ng-click="goto(item)" ng-class="{
+                                    'selected' : item === selected }">
+                            {{item.title}}
+                        </md-button>
+                    </md-list-item>
+                </md-list>
+            </div>
+        </div>
+
+        <!-- Drop down for Bulletin Board -->
+        <div ng-init="showBB=false">
+            <div>
+              <label>
+                <a href="" ng-show="!showBB" ng-click="showBB=!showBB">+</a>
+                <a href="" ng-show="showBB" ng-click="showBB=!showBB">-</a>
+                <md-button ng-click="showBB=!showBB">Bulletin Board</md-button>
+              </label>
+            </div>
+            <div ng-show="showBB">
+                <md-list>
+                    <md-list-item ng-repeat="item in BB_subMenu">
+
+                                <div ng-if="item.title === 'Departmental Boards'">
+                                    
+                                    <!-- Dropdown for Departments -->
+                                    <div ng-init="showDepts=false">
+                                        <div>
+                                          <label>
+                                            <a href="" class="spacing" ng-show="!showDepts" ng-click="showDepts=!showDepts">+</a>
+                                            <a href="" class="spacing" ng-show="showDepts" ng-click="showDepts=!showDepts">-</a>
+                                            <a href="" ng-click="showDepts=!showDepts">DEPARTMENTS</a>
+                                          </label>
+                                        </div>
+                                        <div ng-show="showDepts">
+                                            <md-list>
+                                                <md-list-item ng-repeat="item in BB_dept_subMenu">
+                                                    <md-button class="spacing" ng-click="goto(item)" ng-class="{
+                                                                'selected' : item === selected }">
+                                                        {{item.title}}
+                                                    </md-button>
+                                                </md-list-item>
+                                            </md-list>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div ng-if="item.title !== 'Departmental Boards'">
+                                    <md-button class="spacing" ng-click="goto(item)" ng-class="{
+                                                'selected' : item === selected }">
+                                        {{item.title}}
+                                    </md-button>
+                                </div>
+
+
+                            
+                    </md-list-item>
+                </md-list>
+            </div>
+        </div>
 
     </md-sidenav>
+
     <div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
         <md-toolbar layout="row" class="md-whiteframe-z1">
             <md-button class="menu" hide-gt-md ng-click="toggleMenu()" aria-label="Show User List">
