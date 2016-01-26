@@ -7,7 +7,7 @@ angular.module('bhendi')
         .config(function ($stateProvider) {
             $stateProvider
                     .state('home.BB_dept_chemical', {
-                        url: '/chemical',
+                        url: '/chemicals',
                         views: {
                             '': {
                                 templateUrl: 'app/bulletinboard/departments/chemical/chemical.html',

@@ -1,0 +1,21 @@
+<md-content class="md-padding">
+    <md-tabs md-selected="selectedIndex" md-border-bottom>
+      <md-tab ng-repeat="tab in tabs"
+              ng-disabled="tab.disabled"
+              label="{{tab.title}}">
+        <div class="demo-tab tab{{$index%4}}" style="padding: 25px; text-align: center;">
+          <md-select placeholder="Select Department" ng-model="someVal">
+    		<md-option value="1">Computer</md-option>
+    		<md-option value="2">Information Technology</md-option>
+    		<md-option value="3">Chemical</md-option>
+    		<md-option value="4">Petro Chemical</md-option>
+    		<md-option value="5">Civil</md-option>
+    		<md-option value="6">Mechanical</md-option>
+    		<md-option value="7">electrical</md-option>
+    		<md-option value="8">EXTC</md-option>
+ 		 </md-select>
+          <br/>
+        </div>
+      </md-tab>
+    </md-tabs>
+  </md-content>

@@ -68,7 +68,7 @@ angular.module('bhendi')
         })
         .config(function ($stateProvider) {
             $stateProvider
-                    .state('home.schedule', {
+                    .state('home.TTregular', {
                         url: '/schedule',
                         views: {
                             '': {

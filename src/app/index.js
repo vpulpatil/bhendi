@@ -13,7 +13,7 @@ angular.module('bhendi', ['ngAnimate', 'ngTouch', 'ngSanitize', 'restangular', '
                     .icon('menu', '../assets/svg/menu.svg', 24);
 
             $mdThemingProvider.theme('default')
-                    .primaryPalette('brown')
-                    .accentPalette('red');
+                    .primaryPalette('yellow')
+                    .accentPalette('orange');
         })
         ;
